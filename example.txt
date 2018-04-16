@@ -1,0 +1,148 @@
+image:101> make
+
+gcc  -g -Wall   -c -o ImageFileIO.o ImageFileIO.c
+gcc  -g -Wall   -c -o ImageFilter.o ImageFilter.c
+gcc  -g -Wall   -c -o ImageTools.o ImageTools.c
+gcc  -g -Wall   -c -o BitmapFont.o BitmapFont.c
+gcc  -g -Wall   -c -o main.o main.c
+gcc  -o imgfilter ImageFileIO.o ImageFilter.o ImageTools.o BitmapFont.o main.o -lm
+
+image:102> ./imgfilter 
+
+======  Image Processing =====
+ 0: Negative Image
+ 1: Mosaic Pattern Image
+ 2: Draw Lines
+ 3: Grayscale Image
+ 4: Relationship with Neighbor Pixel
+ 5: Histogramming Brightness
+ 6: Black & White Image
+ 7: Edge Detection
+ 8: Hough Transformation
+ 9: Line Thinning
+ others: End
+Select image processing > 3
+
+**** Grayscale Image *****
+Input INPUT PPM file name[*.ppm]? > Rits.ppm
+Input OUTPUT PGM file name[*.pgm]? > RitsGray.pgm
+
+======  Image Processing =====
+ 0: Negative Image
+ 1: Mosaic Pattern Image
+ 2: Draw Lines
+ 3: Grayscale Image
+ 4: Relationship with Neighbor Pixel
+ 5: Histogramming Brightness
+ 6: Black & White Image
+ 7: Edge Detection
+ 8: Hough Transformation
+ 9: Line Thinning
+ others: End
+Select image processing > 5
+
+**** Histogramming Brightness *****
+Input INPUT PGM file name[*.pgm]? > RitsGray.pgm
+Input OUTPUT PGM file name[*.pgm]? > RitsHist.pgm
+
+======  Image Processing =====
+ 0: Negative Image
+ 1: Mosaic Pattern Image
+ 2: Draw Lines
+ 3: Grayscale Image
+ 4: Relationship with Neighbor Pixel
+ 5: Histogramming Brightness
+ 6: Black & White Image
+ 7: Edge Detection
+ 8: Hough Transformation
+ 9: Line Thinning
+ others: End
+Select image processing > 99
+image:103> display RitsGray.pgm
+
+image:103> display RitsHist.pgm 
+
+image:104> ./imgfilter 
+
+======  Image Processing =====
+ 0: Negative Image
+ 1: Mosaic Pattern Image
+ 2: Draw Lines
+ 3: Grayscale Image
+ 4: Relationship with Neighbor Pixel
+ 5: Histogramming Brightness
+ 6: Black & White Image
+ 7: Edge Detection
+ 8: Hough Transformation
+ 9: Line Thinning
+ others: End
+Select image processing > 6
+
+**** Black and White Image *****
+ 0: Threshold value input
+ 1: P-tile method
+Input binarization type [0-3]> 0
+Input INPUT PGM file name[*.pgm]? > RitsGray.pgm
+Input a threshold value to binarization [0-]> 127
+Input OUTPUT PGM file name[*.pgm]? > RitsBW.pgm
+======  Image Processing =====
+ 0: Negative Image
+ 1: Mosaic Pattern Image
+ 2: Draw Lines
+ 3: Grayscale Image
+ 4: Relationship with Neighbor Pixel
+ 5: Histogramming Brightness
+ 6: Black & White Image
+ 7: Edge Detection
+ 8: Hough Transformation
+ 9: Line Thinning
+ others: End
+Select image processing > 7
+
+**** Edge Detection *****
+0: Gradient
+1: Sobel
+2: Prewitt
+3: Roberts
+4: Laplacian (4 neighbors)
+5: Laplacian (8 neighbors)
+Select an edge detection operator [0-5]> 1
+Input INPUT PGM file name[*.pgm]? > RitsBW.pgm
+Input OUTPUT PGM file name[*.pgm]? > RitsSobel.pgm
+
+======  Image Processing =====
+ 0: Negative Image
+ 1: Mosaic Pattern Image
+ 2: Draw Lines
+ 3: Grayscale Image
+ 4: Relationship with Neighbor Pixel
+ 5: Histogramming Brightness
+ 6: Black & White Image
+ 7: Edge Detection
+ 8: Hough Transformation
+ 9: Line Thinning
+ others: End
+Select image processing > 9
+
+****  Thinning  *****
+Input INPUT PGM file name[*.pgm]? > RitsSobel.pgm
+Input OUTPUT PGM file name[*.pgm]? > RitsThin.pgm
+
+======  Image Processing =====
+ 0: Negative Image
+ 1: Mosaic Pattern Image
+ 2: Draw Lines
+ 3: Grayscale Image
+ 4: Relationship with Neighbor Pixel
+ 5: Histogramming Brightness
+ 6: Black & White Image
+ 7: Edge Detection
+ 8: Hough Transformation
+ 9: Line Thinning
+ others: End
+Select image processing > 99
+
+image:106> display RitsBW.pgm
+
+image:105> display RitsThin.pgm 
+
